@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import style from "../styles/components/TestQuestion.module.scss"
 
 export default class TestQuestion extends Component {
     render() {
         return (
-            <div className='question'>
-                <h2>
+            <div className={style.question + " card"}>
+                <h2 className="card-header">
                     Question #{this.props.questionId}: {this.props.questionText}
 
                 </h2>
-                <ul>
+                <ul className="card-body">
                     {this.props.answers.map((a, i) => (
                         <li key={i}>
-                            <input type="radio" id='answer1' name='answer' value={a} />
-                            <label htmlFor="answer1">{a}</label>
+                            <input type="radio" id={"answer1" + i} name='answer' value={a} />
+                            <label htmlFor={"answer1" + i}>{a}</label>
                         </li>
 
                     ))}

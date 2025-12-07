@@ -1,0 +1,35 @@
+@use "./base/clearDefault.scss" as *;
+@use "./base/mixins.scss" as *;
+@use "./base/colors.scss" as *;
+@use "./base/typography.scss" as *;
+
+@import "~bootstrap";
+
+
+
+#root {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  font-family: $font;
+  
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+main{
+  flex-grow: 1;
+}
+
+
+
+body {
+  background-color: $night-bordeaux;
+}
