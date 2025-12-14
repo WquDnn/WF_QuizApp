@@ -19,6 +19,10 @@ export default class TestQuestion extends Component {
                     ))}
 
                 </ul>
+                <div className={style.bdns}>
+                <button onClick={()=>this.props.next()}>NExt</button>
+                 <button onClick={()=>this.props.prev()}>Previous</button>
+            </div>
             </div>
         )
     }
