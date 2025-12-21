@@ -9,11 +9,12 @@ export default class App extends Component {
     super(props)
     this.state = {
       isQuizStarted: false,
-      questionNumber: 0
+      questionNumber: 0,
     }
     this.startQuiz = this.startQuiz.bind(this)
     this.nextQuestion = this.nextQuestion.bind(this)
     this.prevQuestion = this.prevQuestion.bind(this)
+    this.stopQuiz = this.stopQuiz.bind(this)
   }
 
 startQuiz(){
@@ -29,10 +30,16 @@ prevQuestion() {
   this.setState({questionNumber: this.state.questionNumber - 1})
 }
 
+stopQuiz(){
+  this.setState({isQuizStarted: false})
+}
+
+
 
 quiz1 = {
   quizName: "Html test",
   quizDescription: "hi heelooo",
+  time: 300,
   questions: [
     {
       questionId: 1,
@@ -106,6 +113,9 @@ quiz1 = {
           answers={this.quiz1.questions[this.state.questionNumber].answers}
           next={this.nextQuestion}
           prev={this.prevQuestion}
+          stop={this.stopQuiz}
+          count={this.quiz1.questions.length}
+          time={this.quiz1.time}
         />
     ) : (
       <StartQuiz name ={this.quiz1.quizName}

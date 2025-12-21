@@ -1,3 +1,4 @@
+@use "../base/colors.scss" as colors;
 @import "~bootstrap";
 
 .question {
@@ -21,5 +22,19 @@
         @extend .form-check-input
       }
     }
+  }
+  & .btns {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  & button {
+    background-color: colors.$night-bordeaux;
+    color: colors.$white-smoke;
+    &:disabled {
+      background-color: colors.$night-bordeaux;
+    }
+
   }
 }
