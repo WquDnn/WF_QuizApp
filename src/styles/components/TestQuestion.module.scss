@@ -1,0 +1,40 @@
+@use "../base/colors.scss" as colors;
+@import "~bootstrap";
+
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 500px !important                       ;
+  margin: 15px auto !important;
+  
+  & h2 {
+    text-align: center;
+  }
+  
+  & ul {
+    list-style: "-";
+    & li {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      & input {
+        @extend .form-check-input
+      }
+    }
+  }
+  & .btns {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  & button {
+    background-color: colors.$night-bordeaux;
+    color: colors.$white-smoke;
+    &:disabled {
+      background-color: colors.$night-bordeaux;
+    }
+
+  }
+}
