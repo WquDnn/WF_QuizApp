@@ -10,9 +10,6 @@ export default class StartQuiz extends Component {
         <button
            onClick={()=>this.props.startQuiz(   )}
         className='btn btn-primary m-2'>Start</button>
-        <button>
-            
-        </button>
         
       </div>
     )

@@ -15,6 +15,9 @@ export default class TestQuestion extends Component {
     componentDidMount(){
         this.interval = setInterval(()=>{
             this.setState((prev)=>({...prev, time: prev.time - 1})) 
+            if(this.state.time <= 0){
+                this.props.stop(this.state.userAnswers)
+            }
         }, 1000)
     }
 
@@ -71,7 +74,7 @@ componentDidUpdate(prevProps){
                  <button onClick={()=>this.props.prev()} disabled={this.props.questionId == 1}>PREVIOUS</button>
                 <button onClick={()=>this.props.next()} disabled={this.props.questionId == this.props.count}>NEXT</button>
             </div>
-            <button onClick={()=>this.props.stop()}>Stop Quiz</button>
+            <button onClick={()=>this.props.stop(this.state.userAnswers)}>Stop Quiz</button>
             </div>
         )
     }
